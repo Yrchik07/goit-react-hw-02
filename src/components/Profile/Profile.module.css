@@ -1,0 +1,71 @@
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cardBox {
+  margin: auto;
+  width: 350px;
+  border: 2px solid black;
+  border-radius: 10px;
+  padding-top: 20px;
+  margin-top: 40px;
+}
+.imgCard {
+  margin: auto;
+  max-width: 150px;
+}
+.user {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.userImg {
+  border-radius: 250px;
+  background-color: #000;
+  border: 3px solid rgb(35, 37, 35);
+  width: 150px;
+}
+.userName {
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 0;
+}
+.userEmail {
+  font-size: 1em;
+  color: dimgray;
+  margin-bottom: 0;
+}
+.userCity {
+  font-size: 1em;
+  color: dimgray;
+}
+
+.statsList {
+  display: flex;
+  align-items: center;
+}
+.statsItem {
+  display: flex;
+  flex-direction: column;
+  border-left: 3px solid rgb(88, 83, 83);
+  border-top: 3px solid rgb(88, 83, 83);
+  background-color: #b8aeae;
+  color: #000;
+  width: calc(100% / 3);
+  padding: 10px;
+  align-items: center;
+}
+.statsValue {
+  font-weight: 700;
+  color: #000;
+}
+.statsItem:first-child {
+  border-left: none;
+  border-radius: 0 0 0 10px;
+}
+.statsItem:last-child {
+  border-radius: 0 0 10px 0;
+}
