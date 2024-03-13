@@ -1,22 +1,38 @@
-import Profile from './components/Profile/Profile';
-import FriendList from './components/FriendList/FriendList';
-import TransactionHistory from './components/TransactionHistory/TransactionHistory';
-import { userData } from './userData.json';
-import { friends } from './friends.json';
-import { transactions } from './transactions.json';
+import { useState } from 'react';
+import Feedback from './components/Feedback/Feedback';
+import Options from './components/Options/Options';
 
 function App() {
+  const [feedbackStatistics, setFeedbackStatistics] = useState({
+    good: 0,
+    neutral: 0,
+    bad: 0,
+  });
+
+  const updateFeedback = feedbackType => {
+    setFeedbackStatistics({
+      ...feedbackStatistics,
+      [feedbackType]: feedbackStatistics[feedbackType] + 1,
+    });
+  };
+
+  const totalFeedback =
+    feedbackStatistics.good +
+    feedbackStatistics.neutral +
+    feedbackStatistics.bad;
+
   return (
     <>
-      <Profile
-        name={userData.username}
-        tag={userData.tag}
-        location={userData.location}
-        image={userData.avatar}
-        stats={userData.stats}
+      <h1>Sip Happens Café</h1>
+      <p>
+        Please leave your feedback about our service by selecting one of the
+        options below.
+      </p>
+      <Options updateFeedback={updateFeedback} />
+      <Feedback
+        feedbackStatistics={feedbackStatistics}
+        totalFeedback={totalFeedback}
       />
-      <FriendList friends={friends} />
-      <TransactionHistory items={transactions} />
     </>
   );
 }
