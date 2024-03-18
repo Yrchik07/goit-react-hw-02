@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import Feedback from './components/Feedback/Feedback';
 import Options from './components/Options/Options';
 import Notification from './components/Notification/Notification';
+import Description from './components/Description/Description';
 
 const initialFeedback = {
   good: 0,
@@ -41,11 +42,7 @@ function App() {
 
   return (
     <>
-      <h1>Sip Happens Café</h1>
-      <p>
-        Please leave your feedback about our service by selecting one of the
-        options below.
-      </p>
+      <Description />
       <Options
         resetFeedback={resetFeedback}
         updateFeedback={updateFeedback}
